@@ -2,19 +2,19 @@
 
 $app->get('/projects(/(:id))', function($id = NULL) use ($app) {
 
-	$projectObject = (object) new project();
+	$project = new project();
 
 	//	Gets information for the project with the provided id
 	if ($id) {
-    	$theData = $projectObject->getProject($id);
-    	print_r($theData);
-
-    	$app->status(200);
+    	$app->status(200, array('projects' => $project->getProject($id)));
 		return;	
 	}
 
+	//	Gets the user id from the request
+	$userId = $app->request->headers->get(COLLABTIVE_USER_ID);
+
 	//	Gets all projects to the user
-	$theData = $projectObject->getMyProjects($userId);
+	// $theData = $projectObject->getMyProjects($userId);
 });
 
 ?>

@@ -1,6 +1,6 @@
 {
 	"require" : {
 		"slim/slim" : "2.x",
-		"slim/extras": "dev-master"
+		"entomb/slim-json-api": "1.1.0"
 	}
 }

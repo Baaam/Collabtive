@@ -1,6 +1,8 @@
 <?php
 
-define (COLLABTIVE_API_USERNAME, 'COLLABTIVE_API_USERNAME');
-define (COLLABTIVE_API_PASSWORD, 'COLLABTIVE_API_PASSWORD');
+define (COLLABTIVE_API_USERNAME, 'Collabtive-username');
+define (COLLABTIVE_API_PASSWORD, 'Collabtive-password');
+
+define(COLLABTIVE_USER_ID, 'Collabtive-user-id');
 
 ?>

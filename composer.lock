@@ -4,57 +4,53 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9bae537a95a8745b87a17ce5fdf095c4",
+    "hash": "abd7bfb82c365c766e3a9b975005be2c",
     "packages": [
         {
-            "name": "slim/extras",
-            "version": "dev-master",
-            "target-dir": "Slim/Extras",
+            "name": "entomb/slim-json-api",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/codeguy/Slim-Extras.git",
-                "reference": "a35bc4d15a7efc5e938d8f5fea6b8382912892d5"
+                "url": "https://github.com/entomb/slim-json-api.git",
+                "reference": "1d4531499a42af085157796e41afdb0415eceff6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codeguy/Slim-Extras/zipball/a35bc4d15a7efc5e938d8f5fea6b8382912892d5",
-                "reference": "a35bc4d15a7efc5e938d8f5fea6b8382912892d5",
+                "url": "https://api.github.com/repos/entomb/slim-json-api/zipball/1d4531499a42af085157796e41afdb0415eceff6",
+                "reference": "1d4531499a42af085157796e41afdb0415eceff6",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0",
-                "slim/slim": ">=2.0.0"
+                "php": ">=5.3.0"
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "Twig_Extensions_": "Views/Extension/",
-                    "Slim\\Extras": "."
-                }
+                "classmap": [
+                    "jsonAPI/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "GPL 3.0"
             ],
             "authors": [
                 {
-                    "name": "Josh Lockhart",
-                    "email": "info@joshlockhart.com",
-                    "homepage": "http://www.joshlockhart.com/"
-                },
-                {
-                    "name": "Andrew Smith",
-                    "email": "a.smith@silentworks.co.uk"
+                    "name": "Jonathan Tavares",
+                    "email": "the.entomb@gmail.com",
+                    "homepage": "https://github.com/entomb",
+                    "role": "Developer"
                 }
             ],
-            "description": "Extras package for the Slim Framework",
-            "homepage": "http://github.com/codeguy/Slim-Extras",
+            "description": "Slim extension to implement fast JSON API's",
+            "homepage": "https://github.com/entomb/slim-json-api",
             "keywords": [
-                "extensions",
+                "api",
+                "json",
                 "middleware",
-                "templating"
+                "slim",
+                "view"
             ],
-            "time": "2014-07-17 08:27:10"
+            "time": "2014-08-25 12:39:35"
         },
         {
             "name": "slim/slim",
@@ -106,9 +102,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "slim/extras": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "platform": [],
     "platform-dev": []
