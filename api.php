@@ -37,7 +37,7 @@ This gives you all tasks of the user with ID1 in JSON format.
 
 */
 require("./init.php");
-die("<span style = \"color:red;\">The API is deactivated. The API does not properly enforce permissions yet. For example every user can request every project / task etc. <br />To activate the API remove the die() statement in api.php line 38.<br /><strong>DO NOT USE THE API ON PRODUCTION SERVERS !</strong></span>");
+// die("<span style = \"color:red;\">The API is deactivated. The API does not properly enforce permissions yet. For example every user can request every project / task etc. <br />To activate the API remove the die() statement in api.php line 38.<br /><strong>DO NOT USE THE API ON PRODUCTION SERVERS !</strong></span>");
 $userobj = new user();
 $usr = $_GET["username"];
 $pass = $_GET["pass"];
@@ -48,10 +48,12 @@ if (!$userobj->login($usr, $pass)) {
     die("not authorized");
 }
 
+$userId = $userobj->getId($usr)["ID"];
+
 // variables
 $action = getArrayVal($_GET, "action");
 $id = getArrayVal($_GET, "id");
-$user = getArrayVal($_GET, "user");
+// $user = getArrayVal($_GET, "user");
 // output in xml or json
 $mode = getArrayVal($_GET, "mode");
 // create new array to xml converter
@@ -63,7 +65,8 @@ if ($action == "project.get") {
     $theRootNode = "project";
 } elseif ($action == "myprojects.get") {
     $obj = (object) new project();
-    $theData = $obj->getMyProjects($id);
+    $theData = $obj->getMyProjects($userId);
+    // $theData = $obj->getMyProjects($id);
 
     $theRootNode = "myprojects";
 } elseif ($action == "project.members.get") {
@@ -74,11 +77,11 @@ if ($action == "project.get") {
 // Users
 elseif ($action == "user.profile.get") {
     $obj = (object) new user();
-    $theData = $obj->getProfile($id);
+    $theData = $obj->getProfile($userId);
     $theRootNode = "user";
 } elseif ($action == "user.id.get") {
     $obj = (object) new user();
-    $theData = $obj->getId($id);
+    $theData = $obj->getId($usr);
     $theRootNode = "user";
 } elseif ($action == "user.list.get") {
     $obj = (object) new user();
@@ -88,11 +91,11 @@ elseif ($action == "user.profile.get") {
     $obj = (object) new task();
     $project = new project();
 
-    $myprojects = $project->getMyProjects($user);
+    $myprojects = $project->getMyProjects($userId);
     $theData = array();
 
     foreach($myprojects as $proj) {
-        $theArr = $obj->getAllMyProjectTasks($proj["ID"], 10000, $user);
+        $theArr = $obj->getAllMyProjectTasks($proj["ID"], 10000, $userId);
         if (!empty($theArr)) {
             foreach($theArr as $task) {
                 array_push($theData, array("ID" => $task["ID"], "name" => $task["title"]));
@@ -101,6 +104,15 @@ elseif ($action == "user.profile.get") {
     }
 
     $theRootNode = "tasks";
+} elseif ($action == "user.taskslist.get") {
+    $taskList = (object) new tasklist();
+    $projectObj = new project();
+
+    $myProjects = $project->getMyProjects($userId);
+
+    foreach ($project as $myProjects) {
+        $tasklistArray = $taskList->getProjectTaskLists($proj);
+    }
 }
 // convert to XML or JSON
 if ($mode == "json") {

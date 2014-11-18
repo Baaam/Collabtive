@@ -1,0 +1,25 @@
+RewriteEngine On
+
+#RewriteRule "(^|/)\." - [F]
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteBase /api/v2/
+#RewriteRule /api/v2/   [PT]
+#RewriteRule ^ api_v2.php [DP,L]
+#RewriteRule hello$ goodbye [PT]
+
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_URI} /api/v2/(.*)
+#RewriteRule ^(.*)$ router.php [L,QSA]
+#RewriteBase /api/v2/
+#RewriteRule ^(/api/v2/)(.*)$ $2 [L,R=301]
+#RewriteRule ^(.*)$ api_v2.php [L]
+
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteBase /api/
+#RewriteRule /api/(.*) api_v2.php/$1 [QSA,L]
+
+#RewriteRule api/v2/ api_v2.php [L]
+#</IfModule>
