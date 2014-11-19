@@ -1,6 +1,6 @@
 <?php
 
-global $userId;
+require_once (CL_ROOT . '/include/constants.php');
 
 use \Slim\Middleware;
 
