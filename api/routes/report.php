@@ -9,35 +9,35 @@ $app->put('/report(/)', function () use ($app) {
 
 	//	Validates description
 	//	Check if comes in the request
-	if (!isset($app->request->body["description"])) {
+	$description = valueForKey('description', $app);
+	if (!isset($description)) {
 		missingField("Description");
 		return;
 	}
-	$description = $app->request->body["description"];
 
 	//	Validates startDate
 	//	Check if comes in the request
-	if (!isset($app->request->body["startDate"])) {
+	$startDate = valueForKey('startDate');
+	if (!isset($startDate)) {
 		missingField("Start Date");
 		return;
 	}
-	$startDate = $app->request->body["startDate"];
 
 	//	Validates endDate
 	//	Check if comes in the request
-	if (!isset($app->request->body["endDate"])) {
+	$endDate = valueForKey('endDate', $app);
+	if (!isset($endDate)) {
 		missingField("End Date");
 		return;
 	}
-	$endDate = $app->request->body["endDate"];
 
 	//	Validate projectID
 	//	Check if comes in the request
-	if (!isset($app->request->body["projectID"])) {
+	$projectID = valueForKey('projectID', $app);
+	if (!isset($projectID)) {
 		missingField("projectID");
 		return;
 	}
-	$projectID = $app->request->body["projectID"];
 
 	//	Check if exists in the database
 	$projectModel = new project();
@@ -48,11 +48,11 @@ $app->put('/report(/)', function () use ($app) {
 
 	//	Validate bookID (same as taskID)
 	//	Check if comes in the request
+	$bookID = valueForKey('bookID', $app);
 	if (!isset($app->request->body["bookID"])) {
 		missingField("bookID");
 		return;
 	}
-	$projectID = $app->request->body["bookID"];
 
 	//	Check if exists in the database
 	$taskModel = new task();
