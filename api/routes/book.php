@@ -63,8 +63,8 @@ $app->put('/book(/)', function() use ($app) {
 	}
 
 	//	Check if exists in the database
-	$taskModel = new tasklist();
-	if ($taskModel->getTaskList($taskID) === false) {
+	$taskModel = new task();
+	if ($taskModel->getTask($taskID) === false) {
 		objectNotFound("Task", $app);
 		return;
 	}
