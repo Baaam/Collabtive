@@ -4,38 +4,47 @@ require_once (CL_ROOT . '/include/constants.php');
 
 $app->group('/projects', function () use ($app) {
 
-	$project = new project();
+	$projectModel = new project();
 
 	//	Gets the user id from the request
-	$userId = $app->request->headers->get(COLLABTIVE_USER_ID);
+	$userID = $app->request->headers->get(COLLABTIVE_USER_ID);
 
-	$app->get('(/(:id))', function($id = NULL) use ($app, $project, $userId) {
+	$app->get('(/(:id))', function($id = NULL) use ($app, $projectModel, $userID) {
 
 		//	Gets information for the project with the provided id
 		if ($id) {
-			$requestedProject = $project->getProject($id);
+			$requestedProject = $projectModel->getProject($id);
 	    	$app->render(200, array('projects' => $requestedProject));
 			return;	
 		}
 
 		//	Gets all projects to the user
-		$myProjects = $project->getMyProjects($userId);
+		$myProjects = $projectModel->getMyProjects($userID);
 
-		$app->render(200, array('projects' => $myProjects));
+		if (empty($myProjects)) {
+			$app->render(204, array('msg' => 'No data found.'));
+    	} else {
+    		$app->render(200, array('projects' => $myProjects));
+    	}
 	});
 
-	$app->get('/:id/tasks(/)', function($id) use ($app, $project, $userId) {
-		$task = new task();
+	$app->get('/:id/tasks(/)', function($id) use ($app, $projectModel, $userID) {
 
-	    $myProjects = $project->getMyProjects($userId);
-	    $allMyProjectTasks = array();
+		$taskListModel = new tasklist();
 
-	    foreach($myProjects as $proj) {
-	        $allProjectTasks = $task->getAllMyProjectTasks($proj["ID"], 10000, $userId);
-	        array_push($allMyProjectTasks, $allProjectTasks);
-	    }
+    	$myProjects = $projectModel->getMyProjects($userID);
 
-	    $app->render(200, array('tasks' => $allMyProjectTasks));
+    	$tasksList = array();
+
+    	foreach ($project as $myProjects) {
+        	array_push($tasklist, $taskListModel->getProjectTaskLists($project));
+    	}
+
+    	if (empty($taskList)) {
+    		$app->render(204, array('msg' => 'No data found.'));
+    	} else {
+    		$app->render(200, array('tasks' => $taskList));
+    	}
 	});
 });
 

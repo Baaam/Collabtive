@@ -11,6 +11,7 @@ require_once (CL_API_ROOT . '/AuthenticationMiddleware.php');
 require_once (CL_ROOT . '/include/constants.php');
 
 use \Slim\Slim;
+use \Slim\Middleware;
 
 $slimConfigs = array(
 	'debug' => true,
@@ -26,12 +27,18 @@ $authencicationMiddlewareConfigs = array('paths' => array('user/login'));
 $authMiddleware = new AuthenticationMiddleware($authencicationMiddlewareConfigs);
 $app->add($authMiddleware);
 
-//	Configure JSON Middleware
+//	Configure the content type middleware to the requests
+$requestContentTypesMiddleware = new Middleware\ContentTypes();
+$app->add($requestContentTypesMiddleware);
+
+//	Configure response Middleware. All responses will be returned in JSON
 $app->view(new JsonApiView());
 $app->add(new JsonApiMiddleware());
 
-include 'routes/user.php';
+include 'routes/book.php';
 include 'routes/projects.php';
+include 'routes/tasks.php';
+include 'routes/user.php';
 
 $app->run();
 
