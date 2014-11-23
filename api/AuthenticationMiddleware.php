@@ -67,8 +67,8 @@ class AuthenticationMiddleware extends Middleware {
 
         //  Some error has occur
         $app->log->error(printf('Something goes wrong with user %s that as provided the password %s', $username, $password));
-        $app->response->status(401);
-        $app->response->body('User without access');
+        $app->status(401);
+        // $app->render(401, array('error' => true, 'msg' => 'as'));
         //TODO: Introduce authenticate.
         // $app->response->header('WWW-Authenticate', 'Basic realm="Protected Collabtive"');
 	}

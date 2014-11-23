@@ -21,15 +21,15 @@ $slimConfigs = array(
 
 $app = new Slim($slimConfigs);
 
-$authencicationMiddlewareConfigs = array('paths' => array('user/login'));
-
-//	Configures the Authentication Middleware to handle the user validation
-$authMiddleware = new AuthenticationMiddleware($authencicationMiddlewareConfigs);
-$app->add($authMiddleware);
-
 //	Configure the content type middleware to the requests
 $requestContentTypesMiddleware = new Middleware\ContentTypes();
 $app->add($requestContentTypesMiddleware);
+
+
+//	Configures the Authentication Middleware to handle the user validation
+$authencicationMiddlewareConfigs = array('paths' => array('user/login'));
+$authMiddleware = new AuthenticationMiddleware($authencicationMiddlewareConfigs);
+$app->add($authMiddleware);
 
 //	Configure response Middleware. All responses will be returned in JSON
 $app->view(new JsonApiView());
