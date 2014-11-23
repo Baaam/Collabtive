@@ -36,14 +36,22 @@ $app->group('/projects', function () use ($app) {
 
     	$tasksList = array();
 
-    	foreach ($project as $myProjects) {
-        	array_push($tasklist, $taskListModel->getProjectTaskLists($project));
+    	foreach ($myProjects as $project) {
+    		$myTasksOpen = $taskListModel->getProjectTasklists($project["ID"]);
+    		if ($myTasksOpen) {
+        		array_push($tasksList, $myTasksOpen);
+    		}
+
+    		$myTasksFinished = $taskListModel->getProjectTasklists($project["ID"], 0);
+    		if ($myTasksFinished) {
+    			array_push($tasksList, $myTasksFinished);
+    		}
     	}
 
-    	if (empty($taskList)) {
-    		$app->render(204, array('msg' => 'No data found.'));
+    	if (empty($tasksList)) {
+    		$app->render(201, array('msg' => 'No data found.'));
     	} else {
-    		$app->render(200, array('tasks' => $taskList));
+    		$app->render(200, array('tasks' => $tasksList));
     	}
 	});
 });
