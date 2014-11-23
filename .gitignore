@@ -7,3 +7,6 @@ Thumbs.db
 .buildpath
 *.swp
 *.swo
+
+.DS_Store
+templates_c
