@@ -38,6 +38,8 @@ class AuthenticationMiddleware extends Middleware {
             }
         }
 
+        echo "poop";
+
         //  Request. Has all the information related with the sent request
         $request = $app->request();
 
@@ -56,12 +58,15 @@ class AuthenticationMiddleware extends Middleware {
         $isUserLoggedIn = $user->login($username, $password);
 
         if ($isUserLoggedIn) {
-            $userId = $user->getId($username)["ID"];
-            $providedUserId = $request->headers->get(COLLABTIVE_USER_ID);
-            if ($userId === $providedUserId) {
-                //  Call next middleware
-                $this->next->call();
-                return;
+            $userData = $user->getId($username);
+            if (!empty($userData)) {
+                $userId = $user->getId($username)["ID"];
+                $providedUserId = $request->headers->get(COLLABTIVE_USER_ID);
+                if ($userId === $providedUserId) {
+                    //  Call next middleware
+                    $this->next->call();
+                    return;
+            }
             }
         } 
 

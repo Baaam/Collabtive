@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2014-11-07 00:04:19
+<?php /* Smarty version Smarty-3.1.13, created on 2014-11-23 21:37:58
          compiled from "/Users/meligaletiko/Projects/Baaam/Collabtive/templates/standard/addproject.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:82714583545bfe73395980-43799472%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1628280296547245a63fdef1-28258344%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '82714583545bfe73395980-43799472',
+  'nocache_hash' => '1628280296547245a63fdef1-28258344',
   'function' => 
   array (
   ),
@@ -27,9 +27,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.13',
-  'unifunc' => 'content_545bfe733e5706_69688122',
+  'unifunc' => 'content_547245a64544c9_20646228',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_545bfe733e5706_69688122')) {function content_545bfe733e5706_69688122($_smarty_tpl) {?><div class="block_in_wrapper">
+<?php if ($_valid && !is_callable('content_547245a64544c9_20646228')) {function content_547245a64544c9_20646228($_smarty_tpl) {?><div class="block_in_wrapper">
 
 	<h2><?php echo $_smarty_tpl->getConfigVariable('addproject');?>
 </h2>

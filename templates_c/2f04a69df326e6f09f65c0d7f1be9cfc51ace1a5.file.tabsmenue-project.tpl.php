@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2014-11-06 23:33:12
+<?php /* Smarty version Smarty-3.1.13, created on 2014-11-23 21:44:41
          compiled from "/Users/meligaletiko/Projects/Baaam/Collabtive/templates/standard/tabsmenue-project.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:347121531545bf7285abc71-25594825%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1173396087547247395b2a71-97131228%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '347121531545bf7285abc71-25594825',
+  'nocache_hash' => '1173396087547247395b2a71-97131228',
   'function' => 
   array (
   ),
@@ -29,9 +29,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.13',
-  'unifunc' => 'content_545bf728bc4ac9_76379343',
+  'unifunc' => 'content_547247395ea919_96325361',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_545bf728bc4ac9_76379343')) {function content_545bf728bc4ac9_76379343($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_547247395ea919_96325361')) {function content_547247395ea919_96325361($_smarty_tpl) {?>
 <div class="tabswrapper">
 	<ul class="tabs">
 		<li class="projects"><a <?php if ((($tmp = @$_smarty_tpl->tpl_vars['projecttab']->value)===null||$tmp==='' ? '' : $tmp)=="active"){?>class="active"<?php }?> href="manageproject.php?action=showproject&amp;id=<?php echo $_smarty_tpl->tpl_vars['project']->value['ID'];?>

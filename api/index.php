@@ -7,7 +7,7 @@ define("CL_API_ROOT", __DIR__);
 require_once ("../init.php");
 
 require (CL_ROOT . '/vendor/autoload.php');
-require_once (CL_API_ROOT . '/AuthenticationMiddleware.php');
+require_once (CL_API_ROOT . '/middleware/AuthenticationMiddleware.php');
 require_once (CL_ROOT . '/include/constants.php');
 
 use \Slim\Slim;

@@ -9,7 +9,7 @@ $app->group('/tasks', function () use ($app) {
 	//	Gets the user id from the request
 	$userId = $app->request->headers->get(COLLABTIVE_USER_ID);
 
-	$app->get('/', function () use ($app, $projectModel, $taskListModel) {
+	$app->get('/', function () use ($app, $taskListModel) {
 
 		$projectModel = new project();
 
@@ -28,7 +28,7 @@ $app->group('/tasks', function () use ($app) {
     	}
 	});
 
-	$app->get('/:id(/)', function($id) use ($app, $projectModel, $taskListModel) {
+	$app->get('/:id(/)', function($id) use ($app, $taskListModel) {
 		$task = $taskListModel->getTasklist($id);
 
 		if (empty($task)) {

@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2014-11-06 23:33:13
+<?php /* Smarty version Smarty-3.1.13, created on 2014-11-23 21:44:41
          compiled from "/Users/meligaletiko/Projects/Baaam/Collabtive/templates/standard/log.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1254513291545bf729ef4233-74814835%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1872890783547247396e0600-84265845%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1254513291545bf729ef4233-74814835',
+  'nocache_hash' => '1872890783547247396e0600-84265845',
   'function' => 
   array (
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.13',
-  'unifunc' => 'content_545bf72b091346_48702804',
+  'unifunc' => 'content_54724739766973_26852973',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_545bf72b091346_48702804')) {function content_545bf72b091346_48702804($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Users/meligaletiko/Projects/Baaam/Collabtive/include/plugins/modifier.truncate.php';
+<?php if ($_valid && !is_callable('content_54724739766973_26852973')) {function content_54724739766973_26852973($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Users/meligaletiko/Projects/Baaam/Collabtive/include/plugins/modifier.truncate.php';
 if (!is_callable('smarty_function_paginate_prev')) include '/Users/meligaletiko/Projects/Baaam/Collabtive/include/plugins/function.paginate_prev.php';
 if (!is_callable('smarty_function_paginate_middle')) include '/Users/meligaletiko/Projects/Baaam/Collabtive/include/plugins/function.paginate_middle.php';
 if (!is_callable('smarty_function_paginate_next')) include '/Users/meligaletiko/Projects/Baaam/Collabtive/include/plugins/function.paginate_next.php';

@@ -74,7 +74,8 @@ $app->put('/book(/)', function() use ($app) {
 
 	if ($newTaskID === false) {
 		$app->log->error("Book not created.");
-		$app->status(500);
+		$app->render(201, array('error' => true, 'msg' => "Book not created."));
+		return;
 	}
 
 	//	Returns the created book (task)

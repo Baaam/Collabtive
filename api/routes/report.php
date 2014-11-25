@@ -69,7 +69,8 @@ $app->put('/report(/)', function () use ($app) {
 
 	if ($newReportID === false) {
 		$app->log->error("Report not made.");
-		$app->status(500);
+		$app->render(500, array('error' => true, 'msg' => 'Report not created.'));
+		return;
 	}
 
 	//	Returns the created book (task)

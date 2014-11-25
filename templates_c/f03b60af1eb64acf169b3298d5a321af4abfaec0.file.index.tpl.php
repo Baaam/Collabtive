@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2014-11-07 00:04:18
+<?php /* Smarty version Smarty-3.1.13, created on 2014-11-23 21:37:58
          compiled from "/Users/meligaletiko/Projects/Baaam/Collabtive/templates/standard/index.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:511487577545bfe72e299c6-81389508%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:873181457547245a6008b74-22775920%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '511487577545bfe72e299c6-81389508',
+  'nocache_hash' => '873181457547245a6008b74-22775920',
   'function' => 
   array (
   ),
@@ -33,9 +33,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.13',
-  'unifunc' => 'content_545bfe731ee800_30335240',
+  'unifunc' => 'content_547245a6249f40_40621860',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_545bfe731ee800_30335240')) {function content_545bfe731ee800_30335240($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Users/meligaletiko/Projects/Baaam/Collabtive/include/plugins/modifier.truncate.php';
+<?php if ($_valid && !is_callable('content_547245a6249f40_40621860')) {function content_547245a6249f40_40621860($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_truncate')) include '/Users/meligaletiko/Projects/Baaam/Collabtive/include/plugins/modifier.truncate.php';
 ?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array('jsload'=>"ajax",'jsload1'=>"tinymce",'jsload3'=>"lightbox",'stage'=>"index"), 0);?>
 
 <?php echo $_smarty_tpl->getSubTemplate ("tabsmenue-desk.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array('desktab'=>"active"), 0);?>

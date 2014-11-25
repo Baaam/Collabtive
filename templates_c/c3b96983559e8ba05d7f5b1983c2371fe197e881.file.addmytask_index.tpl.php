@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2014-11-07 00:04:19
+<?php /* Smarty version Smarty-3.1.13, created on 2014-11-23 21:37:58
          compiled from "/Users/meligaletiko/Projects/Baaam/Collabtive/templates/standard/addmytask_index.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:122062825545bfe733eb3b1-61675132%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:901939257547245a6459870-65893868%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '122062825545bfe733eb3b1-61675132',
+  'nocache_hash' => '901939257547245a6459870-65893868',
   'function' => 
   array (
   ),
@@ -25,9 +25,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.13',
-  'unifunc' => 'content_545bfe73438874_57889410',
+  'unifunc' => 'content_547245a64a4269_65190336',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_545bfe73438874_57889410')) {function content_545bfe73438874_57889410($_smarty_tpl) {?><div class="block_in_wrapper">
+<?php if ($_valid && !is_callable('content_547245a64a4269_65190336')) {function content_547245a64a4269_65190336($_smarty_tpl) {?><div class="block_in_wrapper">
 	
 	<h2><?php echo $_smarty_tpl->getConfigVariable('addtask');?>
 </h2>
