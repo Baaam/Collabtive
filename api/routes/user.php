@@ -25,7 +25,8 @@ $app->group('/user', function () use ($app) {
 			return;
 		}
 
-		$userId = $user->getId($username)["ID"];
+		$userData = $user->getId($username);
+		$userId = $userData["ID"];
 		$userProfile = $user->getProfile($userId);
 
 		$app->render(202, array('user' => $userProfile));

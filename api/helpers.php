@@ -12,8 +12,9 @@ function valueForKey($key, $app) {
 	if ($app->request->isFormData()) {
 		return $app->request->params($key);
 	} else {
-		if (isset($app->request->getBody()[$key])) {
-			return $app->request->getBody()[$key];
+		$bodyParams = $app->request->getBody();
+		if (isset($bodyParams[$key])) {
+			return $bodyParams[$key];
 		}
 	}
 
